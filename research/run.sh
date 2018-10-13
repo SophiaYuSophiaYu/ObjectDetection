@@ -10,7 +10,7 @@ export PYTHONPATH=$PYTHONPATH:$DIR:$DIR/slim:$DIR/object_detection
 
 # 定义各目录
 output_dir=/output  # 训练目录
-dataset_dir=/data/Sophia/w9-data
+dataset_dir=/data/Sophia/objectdetectiondata
 
 train_dir=$output_dir/train
 checkpoint_dir=$train_dir
@@ -27,7 +27,7 @@ pipeline_config_path=$output_dir/$config
 # 因为dataset里面的东西是不允许修改的，所以这里要把config文件复制一份到输出目录
 cp $DIR/$config $pipeline_config_path
 
-for i in {0..10}  # for循环中的代码执行5此，这里的左右边界都包含，也就是一共训练500个step，每100step验证一次
+for i in {0..4}  # for循环中的代码执行5此，这里的左右边界都包含，也就是一共训练500个step，每100step验证一次
 do
     echo "############" $i "runnning #################"
     last=$[$i*100]
