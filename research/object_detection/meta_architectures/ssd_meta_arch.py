@@ -694,7 +694,7 @@ class SSDMetaArch(model.DetectionModel):
       if variable.op.name.startswith(self._extract_features_scope):
         var_name = variable.op.name
         if not from_detection_checkpoint:
-          var_name = (re.split('^' + self._extract_features_scope + '/',
+          var_name = (re.split('^' + '/',
                                var_name)[-1])
         variables_to_restore[var_name] = variable
     return variables_to_restore
